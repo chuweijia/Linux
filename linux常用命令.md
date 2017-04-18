@@ -12,7 +12,10 @@
   `rm -r`              删除 文件夹   
   `history`            历史命令记录   
   `which node`         安装node的绝对路径  
+  `cd /etc`            命令行中直接进入到etc  
+  `source ./profile`   更改完profile后，使之生效  
   
+  
   
 # svn命令  
   `svn co path`        checkout简写，用于将远程路径path，导出到本地  
