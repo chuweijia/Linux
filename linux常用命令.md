@@ -12,9 +12,22 @@
   `rm -r`              删除 文件夹   
   `history`            历史命令记录   
   `which node`         安装node的绝对路径  
-  `cd /etc`            命令行中直接进入到etc  
-  `source ./profile`   更改完profile后，使之生效  
+  `cd /etc`            命令行中直接进入到etc  触发原点为～
+  `source ./profile`   更改完profile后，使之生效，但是会使环境变量重复，但是没关系。。
   
+  `sudo su`            su，super user系统管理员    
+  `ps -ef`             ps，process status，进程状态。-ef，显示所有信息包括命令行。权限是`所有人`  
+  `ps -ef|grep nginx`  grep，global regular expression print，全局正则表达式，nginx，即可`指定打印某一项`进程的信息  
+                  
+  `nginx -c /Users/chuweijia/Workspace/etc/nginx/nginx.conf`  通过上述获取到`服务码`，再去启动nginx命令  
+  `nginx -c /Users/chuweijia/Workspace/etc/nginx/nginx.conf -s stop`  关闭   
+  `echo $PATH`   打印环境变量  
+  `open .bash_profile`   新窗口打开  
+  `cat .bash_profile`    终端打开  
+  `/usr/local/bin`       存放了 brew  
+  `/usr/local/Cellar`    存放了 brew install的文件  
+  
+  
   
   
 # svn命令  
