@@ -27,6 +27,9 @@
   `/usr/local/bin`       存放了 brew  
   `/usr/local/Cellar`    存放了 brew install的文件  
   
+  `ps -ef`               查看当前进程  
+  `ps -ef > log.txtx`    将显示完全的内容，存入到txt文件中   
+  
   
   
   
@@ -52,6 +55,29 @@
   `update 表名A set k1=v1,k2=v2 WHERE K3=V3 and K4=V4`     更新数据表 含条件  
   `insert into 表名B(k1,k2) VALUES(v1,v2),(v3,v4)`         数据表中插值  `多条`   
   `insert into 表名B set k1=v1,k2=v2;`                     数据表中插值  `单条`  
+  
+  
+# docker命令  
+  `docker info`     docker的信息  
+  `docker ps -a`    镜像的进程 所有更新的用户信息  
+  `docker images`   docker中所有镜像  
+  `docker ps -a`    镜像的进程 所有更新的用户信息 
+  `docker run`      启动一个指令在一个新容器中 且运行`指定命令`  
+  `-d`              deamon 守护进程，后台运行  
+  `-e`              enviroment  环境变量 
+  `-p`              指定端口映射，可绑定多个端口  
+  `-P`              随机映射一个49000～49900 的端口  
+  `-v`              指定文件夹映射  宿主机（默认是`/tmp/registry`）：docker机  
+  `--name`          指定了启动后的容器名字  
+  `-t`              让docker分配一个伪终端  
+  `-i`              使容器的标准输入打开    
+  
+  `sudo docker ps -a|grep 端口号`       在宿主机中，查看指定端口号的docker的进程状态，docker命令`仅在宿主机中`存在，在docker容器内部不存在  
+  `sudo docker exec -it 容器名 bash`    进入到指定容器名的docker   
+  
+  
+  
+  
   
 
 
