@@ -66,17 +66,16 @@
   解释：表示进入库中，需要先`增加一列`，为`用户`   
   解决：如下，重置密码，保存，退出重登  
   
-  ```markdown
+  ```markdown   
+  
     SET PASSWORD = PASSWORD('chu030224');
     ALTER USER 'root'@'localhost' PASSWORD EXPIPE NEVER;
     FLUSH PRIVILEGES; 
     quit;
     退出，重新以新密码进入  
-  ```
-  
-                    
-  
-  
+    
+  ```  
+   
   
 # docker命令  
   `docker info`     docker的信息  
