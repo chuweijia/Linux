@@ -109,16 +109,5 @@
      
      vi /etc/nginx／conf.d/00-default.conf 
      会查看到root入口文件  只关注这个就行了 下面的index 不关注  
-     
- ```    
- 
-   
-  
-  
-  
-  
+  ```   
   
-  
-
-
-  
