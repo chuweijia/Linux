@@ -32,26 +32,16 @@
   `vi log.txtx || cat log.txtx`  查看上步的文件  
   
   
-
-  ```markdown   
-     **进程详情**  
-     uid,   用户id
-     pid,   子进程  
-     ppid,  父进程  
-     tty,   终端设备的统称（teletypes）
-     time,  进程占用cpu的时间
-     C,     进程生命周期cpu利用率  
-  ```   
+  **ps后，进程各个属性说明**  
+ 
+       uid,   用户id
+       pid,   子进程  
+       ppid,  父进程  
+       tty,   终端设备的统称（teletypes）
+       time,  进程占用cpu的时间
+       C,     进程生命周期cpu利用率    
   
-  ```markdown  
-     **常用端口号**  
-     3306，数据库  
-     9000，php-fpm  
-     6379,redis  
-     8080,浏览器  
-     (docker中由于没有浏览器，则在本地输入 10.xx.13.xx : 6608,端口对接方式为：6608->80 即docker启端口6608对接浏览器的80端口)
-     以上所有端口也适用于本地和**docker**   
-   ```   
+
 
   `ifconfig`             类似于window下的`ipconfig`，可以查到本机各信息  
   
