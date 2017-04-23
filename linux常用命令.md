@@ -54,9 +54,28 @@
   `select * from 表名\G`                       展示数据表中内容  整洁版    
   `update 表名A set k1=v1,k2=v2 WHERE K3=V3 and K4=V4`     更新数据表 含条件  
   `insert into 表名B(k1,k2) VALUES(v1,v2),(v3,v4)`         数据表中插值  `多条`   
-  `insert into 表名B set k1=v1,k2=v2;`                     数据表中插值  `单条`  
+  `insert into 表名B set k1=v1,k2=v2;`                     数据表中插值  `单条`    
   
   
+  ## mysql本地环境搭建  
+  下载`mysql-server`，一种mysql的驱动服务  
+  `mysqld`           启动服务  
+  `mysql -u root -p` 以root权限，登陆mysql，即输入`root@localhost`的密码!!  
+  `show databases`   报错：you must reset password using alter user...   
+                     解释：表示进入库中，需要先`增加一列`，为`用户`   
+  ```
+  SET PASSWORD = PASSWORD('chu030224');
+  ALTER USER 'root'@'localhost' PASSWORD EXPIPE NEVER;
+  FLUSH PRIVILEGES;  
+  quit;
+  退出，重新以新密码进入  
+  
+  ```
+  
+                    
+  
+  
+  
 # docker命令  
   `docker info`     docker的信息  
   `docker ps -a`    镜像的进程 所有更新的用户信息  
