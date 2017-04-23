@@ -32,17 +32,26 @@
   `vi log.txtx || cat log.txtx`  查看上步的文件  
   
   
-**进程详情**  
-  ```markdown  
+
+  ```markdown   
+     **进程详情**  
      uid,   用户id
      pid,   子进程  
      ppid,  父进程  
      tty,   终端设备的统称（teletypes）
      time,  进程占用cpu的时间
-     C,     进程生命周期cpu利用率
-  ``` 
+     C,     进程生命周期cpu利用率  
+  ```   
   
-**常用端口号**  
+  ```markdown  
+     **常用端口号**  
+     3306，数据库  
+     9000，php-fpm  
+     6379,redis  
+     8080,浏览器  
+     (docker中由于没有浏览器，则在本地输入 10.xx.13.xx : 6608,端口对接方式为：6608->80 即docker启端口6608对接浏览器的80端口)
+     以上所有端口也适用于本地和**docker**   
+   ```   
 
   `ifconfig`             类似于window下的`ipconfig`，可以查到本机各信息  
   
@@ -56,45 +65,6 @@
   `svn update`         更新 无后缀则更新全部  
   `svn delete`         删除  
 
-
-# mysql指令  
-  `mysqladmin -u root -p create chuDB`     `root`权限下，创建`数据库`  
-   
-  `show databases`     展示所有的数据库  
-  `use chu`            使用指定的数据库  
-  `show tables`        展示所有的数据表  
-  `alter table 表名 add 列名 int(1) NOT NULL DEFAULT'0' COMMENT'0=未执行，1=已执行'`;    增加key（表的列）和key的属性  
-  `alter table 表名 add KEY keyname(列名1，列名2，列名n)`;                               KEY与index 同级不同意义 也非primarykey..  
-  `show create table test` ||  `desc test`    用于展示数据表的`索引`的格式  
-  `select * from 表名`                         展示数据表中内容  
-  `select * from 表名\G`                       展示数据表中内容  整洁版    
-  `update 表名A set k1=v1,k2=v2 WHERE K3=V3 and K4=V4`     更新数据表 含条件  
-  `insert into 表名B(k1,k2) VALUES(v1,v2),(v3,v4)`         数据表中插值  `多条`   
-  `insert into 表名B set k1=v1,k2=v2;`                     数据表中插值  `单条`    
-    
-## mysql本地环境搭建  
-  
-  下载`mysql-server`，一种mysql的驱动服务  
-  `mysqld`           启动服务  
-  `mysql -u root -p` 以root权限，登陆mysql，即输入`root@localhost`的密码!!  
-  `show databases`   
-  报错：you must reset password using alter user...   
-  解释：表示进入库中，需要先`增加一列`，为`用户`   
-  解决：如下，重置密码，保存，退出重登  
-  
-```markdown   
-mysql>  SET PASSWORD = PASSWORD('chu030224');
-mysql>  ALTER USER 'root'@'localhost' PASSWORD EXPIPE NEVER;
-mysql>  FLUSH PRIVILEGES; 
-mysql>  quit;
-**退出，重新以新密码进入**  
-```  
-  
-  
-
-
-   
-  
 # docker命令  
   `docker info`     docker的信息  
   `docker ps -a`    镜像的进程 所有更新的用户信息  
