@@ -67,11 +67,11 @@
   解决：如下，重置密码，保存，退出重登  
   
 ```markdown   
-SET PASSWORD = PASSWORD('chu030224');
-ALTER USER 'root'@'localhost' PASSWORD EXPIPE NEVER;
-FLUSH PRIVILEGES; 
-quit;
-退出，重新以新密码进入  
+mysql>  SET PASSWORD = PASSWORD('chu030224');
+mysql>  ALTER USER 'root'@'localhost' PASSWORD EXPIPE NEVER;
+mysql>  FLUSH PRIVILEGES; 
+mysql>  quit;
+** 退出，重新以新密码进入  **  
 ```  
   
   
