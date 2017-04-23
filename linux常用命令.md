@@ -29,8 +29,15 @@
   
   `ps -ef`               查看当前进程  
   `ps -ef > log.txtx`    将显示`完全`的内容，存入到txt文件中  
+  `shift+gg`             查看`完全 `  
   `vi log.txtx || cat log.txtx`  查看上步的文件  
   
+   **本地启nginx+php-fpm**  
+   
+ ```markdown  
+     nginx -c/Users/chuweijia/Workspace/etc/nginx/nginx.conf 
+     php-fpm -p /var -y/etc/php-fpm.conf  
+ ``` 
   
   **ps后，进程各个属性说明**  
   
@@ -85,6 +92,28 @@
   
   `telnet 127.0.0.1 6608` docker下查看端口的占用情况，127.0.0.1 表示docker中的浏览器访问地址！  
   
+## docker创建容器  
+
+ **docker启nginx+php-fpm**  
+   
+ ```markdown  
+     /etc/init.d/nginx start || restart 
+     /etc/php-fpm.conf start 
+ ```   
+ 
+ **docker中nginx配置文件目录**  
+   
+ ```markdown  
+     vi /etc/nginx／nginx.conf  
+     最后一句：include ／etc／nginx／conf.d/*.conf 代表引入的实际生效的配置文件
+     
+     vi /etc/nginx／conf.d/00-default.conf 
+     会查看到root入口文件  只关注这个就行了 下面的index 不关注  
+     
+ ```    
+ 
+   
+  
   
   
   
