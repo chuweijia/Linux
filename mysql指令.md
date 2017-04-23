@@ -1,10 +1,10 @@
 # mysql指令  
   `mysqladmin -u root -p create chuDB`     `root`权限下，创建`数据库`  
    
-  `show databases`     展示所有的数据库  
-  `use chu`            使用指定的数据库  
+  `show databases`     展示所有的数据库    
+  `use chu`            使用指定的数据库    
   `show tables`        展示所有的数据表  
-  `alter table 表名 add 列名 int(1) NOT NULL DEFAULT'0' COMMENT'0=未执行，1=已执行'`;    增加key（表的列）和key的属性  
+  `alter table 表名 add 列名 int(1) NOT NULL DEFAULT'0' COMMENT'0=未执行，1=已执行'`;    增加key（表的列）和key的属性    
   `alter table 表名 add KEY keyname(列名1，列名2，列名n)`;                               KEY与index 同级不同意义 也非primarykey..  
   `show create table test` ||  `desc test`    用于展示数据表的`索引`的格式  
   `select * from 表名`                         展示数据表中内容  
