@@ -71,7 +71,7 @@ mysql>  SET PASSWORD = PASSWORD('chu030224');
 mysql>  ALTER USER 'root'@'localhost' PASSWORD EXPIPE NEVER;
 mysql>  FLUSH PRIVILEGES; 
 mysql>  quit;
-** 退出，重新以新密码进入  **  
+**退出，重新以新密码进入**  
 ```  
   
   
