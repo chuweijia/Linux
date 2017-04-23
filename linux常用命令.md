@@ -28,9 +28,34 @@
   `/usr/local/Cellar`    存放了 brew install的文件  
   
   `ps -ef`               查看当前进程  
-  `ps -ef > log.txtx`    将显示完全的内容，存入到txt文件中   
+  `ps -ef > log.txtx`    将显示`完全`的内容，存入到txt文件中  
+  `vi log.txtx || cat log.txtx`  查看上步的文件  
   
   
+   **进程详情**  
+  ```markdown  
+     uid,   用户id
+     pid,   子进程  
+     ppid,  父进程  
+     tty,   终端设备的统称（teletypes）
+     time,  进程占用cpu的时间
+     C,     进程生命周期cpu利用率
+  ``` 
+  
+  **常用端口号**  
+  
+  ```markdown  
+  
+ 3306，数据库  
+ 9000，php-fpm  
+ 6379,redis  
+ 8080,浏览器  
+ (docker中由于没有浏览器，则在本地输入 10.xx.13.xx : 6608,端口对接方式为：6608->80 即docker启端口6608对接浏览器的80端口)
+ 以上所有端口也适用于本地和**docker**  
+     
+  ```  
+  
+  `ifconfig`             类似于window下的`ipconfig`，可以查到本机各信息  
   
   
 # svn命令  
@@ -43,9 +68,11 @@
   `svn delete`         删除  
 
 
-# mysql指令
-  `show databases`     展示所有的数据库  
-  `use chu`            使用指定的数据库  
+# mysql指令  
+  `mysqladmin -u root -p create chuDB`     `root`权限下，创建`数据库`  
+   
+  `show databases`     展示所有的数据库  
+  `use chu`            使用指定的数据库  
   `show tables`        展示所有的数据表  
   `alter table 表名 add 列名 int(1) NOT NULL DEFAULT'0' COMMENT'0=未执行，1=已执行'`;    增加key（表的列）和key的属性  
   `alter table 表名 add KEY keyname(列名1，列名2，列名n)`;                               KEY与index 同级不同意义 也非primarykey..  
@@ -72,8 +99,8 @@ mysql>  ALTER USER 'root'@'localhost' PASSWORD EXPIPE NEVER;
 mysql>  FLUSH PRIVILEGES; 
 mysql>  quit;
 **退出，重新以新密码进入**  
-```  
-  
+```  
+  
   
 
 
@@ -95,8 +122,11 @@ mysql>  quit;
   `-i`              使容器的标准输入打开    
   
   `sudo docker ps -a|grep 端口号`       在宿主机中，查看指定端口号的docker的进程状态，docker命令`仅在宿主机中`存在，在docker容器内部不存在  
-  `sudo docker exec -it 容器名 bash`    进入到指定容器名的docker   
+  `sudo docker exec -it 容器名 bash`    进入到指定容器名的docker     
   
+  `telnet 127.0.0.1 6608` docker下查看端口的占用情况，127.0.0.1 表示docker中的浏览器访问地址！  
+  
+  
   
   
   
