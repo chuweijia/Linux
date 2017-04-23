@@ -61,6 +61,12 @@
   下载`mysql-server`，一种mysql的驱动服务  
   `mysqld`           启动服务  
   `mysql -u root -p` 以root权限，登陆mysql，即输入`root@localhost`的密码!!  
+    `show databases`   
+  报错：you must reset password using alter user...   
+  解释：表示进入库中，需要先`增加一列`，为`用户`   
+  解决：如下，重置密码，保存，退出重登  
+  
+
 
    
   
