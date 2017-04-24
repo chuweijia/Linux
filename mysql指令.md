@@ -1,5 +1,6 @@
 # mysql指令  
-  `mysqladmin -u root -p create chuDB`     `root`权限下，创建`数据库`  
+  `mysqladmin -u root -p create chuDB`   `root`权限下，创建`数据库`  
+  `create databases chuDB`                创建`数据库`  
    
   `show databases`     展示所有的数据库    
   `use chu`            使用指定的数据库    
@@ -27,6 +28,17 @@
     mysql>  SET PASSWORD = PASSWORD('chu030224');
     mysql>  ALTER USER 'root'@'localhost' PASSWORD EXPIPE NEVER;
     mysql>  FLUSH PRIVILEGES; 
+    mysql>  quit;
+    **退出，重新以新密码进入**  
+```  
+
+或者  
+
+```markdown    
+    mysql>  use mysql;
+    mysql>  create user 'chuweijia_user'@'%' IDENTIFIED BY '123456';
+    mysql>  GRANT ALL ON chuweijia_db.* TO ''@'%' identified by "123456" with grant option; 
+    mysql>  flush privileges;
     mysql>  quit;
     **退出，重新以新密码进入**  
 ```  
