@@ -34,5 +34,6 @@
      最后一句：include ／etc／nginx／conf.d/*.conf 代表引入的实际生效的配置文件
 
      vi /etc/nginx／conf.d/00-default.conf 
-     会查看到root入口文件  只关注这个就行了 下面的index 不关注
- ```   
+     root是 全局根目录  ！！！
+     index是 默认入口文件 ！！！
+ ```   
