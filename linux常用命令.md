@@ -35,8 +35,8 @@
    **本地启nginx+php-fpm**  
    
  ```markdown  
-     nginx -c/Users/chuweijia/Workspace/etc/nginx/nginx.conf 
-     php-fpm -p /var -y/etc/php-fpm.conf  
+     nginx -c/Users/chuweijia/Workspace/etc/nginx/nginx.conf (-s stop || -s reload)
+     php-fpm -p /var -y/etc/php-fpm.conf   (-s stop || -s reload)
  ``` 
   
   **ps后，进程各个属性说明**  
