@@ -13,9 +13,11 @@
   `update 表名A set k1=v1,k2=v2 WHERE K3=V3 and K4=V4`     更新数据表 含条件  
   `insert into 表名B(k1,k2) VALUES(v1,v2),(v3,v4)`         数据表中插值  `多条`   
   `insert into 表名B set k1=v1,k2=v2;`                     数据表中插值  `单条`    
-    
-## mysql本地环境搭建  
-  
+  `delete from 表名;`                                      删除表内的数据  
+  `drop 表名;`                                             删除表  
+  `/.env;`                                                项目下的数据库配置路径  
+## mysql本地环境搭建  
+ 
   下载`mysql-server`，一种mysql的驱动服务  
   `mysqld`           启动服务  
   `mysql -u root -p` 以root权限，登陆mysql，即输入`root@localhost`的密码!!  
