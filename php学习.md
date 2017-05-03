@@ -51,6 +51,13 @@ $row = mysql_fetch_assoc($result);// 返回，关联数组（从结果集中取�
 
 ```
 
+`rm -rf 文件夹名`  强制删除非空文件夹，其中 -rf是做了递归处理  
+`require_once('../config/config.php')` 同`require` 用法，但是会检查文件唯一性  
+`ini_set('display_errors',0)` 设置配置项（是否将错误信息作为输出值得一部分打印到屏幕上）  
+`date_default_timezone_set('Asia/Shanghai')` 设日期时间函数的默认时区  
+
+
+
 
 
 
