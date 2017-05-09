@@ -54,7 +54,44 @@ $row = mysql_fetch_assoc($result);// 返回，关联数组（从结果集中取�
 `rm -rf 文件夹名`  强制删除非空文件夹，其中 -rf是做了递归处理  
 `require_once('../config/config.php')` 同`require` 用法，但是会检查文件唯一性  
 `ini_set('display_errors',0)` 设置配置项（是否将错误信息作为输出值得一部分打印到屏幕上）  
-`date_default_timezone_set('Asia/Shanghai')` 设日期时间函数的默认时区  
+`date_default_timezone_set('Asia/Shanghai')` 设日期时间函数的默认时区   
+
+`strtotime($date)`  将字符串(人类习惯读的，2017-05-01，tomorrow)解析为`时间戳` (unix可读的)  
+`时间戳`  是种字符序列，表示具体事件发生的日期和时间  
+`data("Ymd",strtotime($date))`  以`某种方式`格式化时间戳,返回值是易读的时间  
+
+`$arr[$key][$q] = 'chu';`  若原来没有[$q]这个属性，则新增这个属性  
+
+``` markdown  
+$keys = array('0'=>'k1','1'=>'k2');
+foreach ($keys as $key){
+  echo $key; //'k1','k2'
+}  
+foreach ($keys as $key => $value){
+  echo $key; //0,1
+  echo $value; //'k1','k2'
+}
+```  
+``` markdown  
+$keys = array('k1'=>'','k2'=>'');
+foreach ($keys as $key){
+  echo $key; //''空值！！
+}  
+foreach ($keys as $key => $value){
+  echo $key; //'k1','k2'
+}
+```  
+
+``` markdown  
+$keys = array('k1'=>'123','k2'=>'456');
+foreach ($keys as $key){
+  echo $key; //'k1','k2'
+}  
+```  
+
+
+
+
 
 
 
