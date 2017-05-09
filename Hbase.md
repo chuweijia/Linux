@@ -45,6 +45,24 @@ foreach ($scanRets as $scanRet){
 new HBaseTypes.TColumnValue(family:'info',qualifier:'hobbies',value:'music');
 ```   
 
+**cronTab linux自动执行脚本**   
+`yum install crontabs`  在指定`docke`r中下载  
+`crond -i` 初始化 仅需一次  
+`cd /etc/cron.d`  默认生成路径   
+`vi test.cron`  新建并编辑脚本  
+`*/10 * * * * root /usr/bin/php  /www/svn_chu/printCron.php >> /www/svn_chu/show.txt 2>&1`  
+
+**讲解**  
+`*/10 * * * * `  五列，表示分钟(1～59)，小时（1～23，0表示子夜），日（1～31），月（1～12），星期（0～6，0表示周日）  
+`root` 表示启动脚本的权限  
+`/usr/bin/php` php命令  
+`urlA >> urlB` A中内容以`累加`方式输出到B中（单个`>`表示以`覆盖`方式） 
+`2>&1`1标准输出 2错误输出    
+2>&1 是将错误输出重定向到标准输出。 然后将标准输入重定向到文件log.txt。  
+&1 表示的是文件描述1，表示标准输出，如果这里少了&就成了数字1，就表示重定向到文件1。  
+
+
+
 
 
 
