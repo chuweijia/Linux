@@ -62,6 +62,19 @@ new HBaseTypes.TColumnValue(family:'info',qualifier:'hobbies',value:'music');
 &1 表示的是文件描述1，表示标准输出，如果这里少了&就成了数字1，就表示重定向到文件1。  
 
 
+**hbase shell的使用**  
+`describe '数据表名' `  查看数据表结构  
+`scan '表名',{STARTROW => '0_1*',ENDROW => '0_3'}` STARTROW`支持通配符且是前缀通配匹配`，ENDROW不支持  
+`scan '表名',{LIMIT => 10}` 扫描表前十条数据  
+`count'表名',{INTERVAL => 100,CACHE => 500}` 查询表行数，每100行打印一次，缓存区是500条  
+`get '表名','rowkey值','info:win_hits'` 获取指定rowkey的某行  
+
+
+`scan '表名',{STARTROW => '0_1',FILTER => "PrefixFilter('条件')"}` 其中`PrefixFilter`前缀过滤 只能这个！！   
+
+
+
+
 
 
 
