@@ -9,7 +9,9 @@
   `mv`                 移动，移动原点为当前目录，eg：`mv itermout ../` ,移动到上一级目录,  `tab键补全`  
   `mkdir`              新建文件夹  
   `rm`                 删除 指定文件 
-  `rm -r`              删除 文件夹   
+  `rm -r`              删除 文件夹 递归  
+  `rm -f`              强制性  
+  `rm -i`              询问要删除的文件(夹)  
   `history`            历史命令记录   
   `which node`         安装node的绝对路径  
   `cd /etc`            命令行中直接进入到etc  触发原点为～
@@ -31,6 +33,21 @@
   `ps -ef > log.txtx`    将显示`完全`的内容，存入到txt文件中  
   `shift+gg`             查看`完全 `  
   `vi log.txtx || cat log.txtx`  查看上步的文件  
+  
+  
+  `cat /etc/issue`             直接查看
+  `cat -A /etc/issue`          完整显示
+  `cat -n /etc/issue`          会打印行号
+  
+  `./nginx` 代表相对路径，指当前路径下的nginx，比如cd ./chu === cd chu，docker上得进入到`sbin`下  
+  `User` 用户  
+  `Group` 用户组
+  `Others` 其他人  
+  `chgrp users test.log`             改变文件所属用户组  
+  `chgrp -R users 文件夹`             改变文件夹所属用户组  
+  `chown [-R] 账号名称 文件或目录`      改变文件所属拥有者  
+  
+  
   
    **本地启nginx+php-fpm**  
    
@@ -70,5 +87,17 @@
   `svn st`             status简写，状态  
   `svn info`           查看文件详细信息  
   `svn update`         更新 无后缀则更新全部  
-  `svn delete`         删除  
+  `svn delete`         删除    
+  `svn cp old_url new_url -m "chu"`              这样写，即新建一个文件夹  
   
+# vim使用  
+  `i`                  编辑模式  
+  `esc（或ctrl+c）`     一般模式  
+  `／`                 命令行模式，光标进入到最后一行，可以`搜索`，并`回车定位`  
+  `ctrl+d/n`           半页移动  
+  `ctrl+f/b`           整页移动  
+  `u`                  反悔   
+  `／+G`               从头预览  
+  `ctrl+d/n`           半页移动
+  
+  
