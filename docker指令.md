@@ -30,7 +30,7 @@
   **docker中nginx配置文件目录**  
    
  ```markdown  
-     vi /etc/nginx／nginx.conf  
+     vi /etc/nginx/nginx.conf  
      最后一句：include ／etc／nginx／conf.d/*.conf 代表引入的实际生效的配置文件
 
      vi /etc/nginx／conf.d/00-default.conf 
