@@ -43,4 +43,32 @@
     mysql>  flush privileges;
     mysql>  quit;
     **退出，重新以新密码进入**  
-```  
+```    
+
+## sql shell  
+    
+   select * from tablename where cust_budget `in` ('a','b'); 注意in的使用  
+   select distinct name from tablename ;对列去重  
+   select username from user limit 4,10;其中4表示索引位置，10表示条数。表示查询5～14 共10条  
+   select a.ad_id,c.cust_id from cust_tmp c `left join` ad_tmp a `on` c.cust_id = a.ad_id; 起别名并联表查询  
+   select cust_id `as` custd ,sum(ad_budget) from ad_tmp `group by` cust_id; 按同名查询  
+   
+   `insert into` tablename set date = '2017';初次插值  
+   `update` tablename set date = '2018' where cust_id = 8;非初次插值  
+   `truncate` table tablename;清空表格数据  
+   `primary key` 主键：不可有重复；多个，称为复合主键，当所有字段不同时 才认为这行不同  
+   
+   alter table camp_tmp `change` `camp_budget camp_budget` decimal(5,6),not null,default '0',comment '注释';改变某列值 全写上    
+   
+   if(exp1,exp2,exp3); exp是`表达式`，当exp1为true时，执行exp2否则3  
+   
+## mysql_query
+
+   mysql_query(query,connection);其中前者（sql查询）必选，后者（规定sql连接标识符）可选（若无则使用上一个打开的连接）  
+   $result = mysql_query($query,$connect);
+   while($row = mysql_fetch_array($result,MYSQL_ASSOC));以关联数组输出 ，应用于输出多行结果  
+   
+   
+ 
+   
+   
