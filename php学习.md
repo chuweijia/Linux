@@ -1,8 +1,30 @@
-`$_REQUEST['data-text']` 获取前端给的请求参数  
-`intval（$a）` $a为array（）|| '',,,非空 返回`1`，失败返回`0`  
+`$_REQUEST['data-text']` 获取前端给的请求参数  包含$_GET['A'] $_POST['A']两种请求  
+`include_once` 若已被包含则不包含  
+`define(string name,vale)` 返回值bool，value为int str float bool array  
+`dirname(string $path)`  返回$path的父路径   
+`intval（$a）` $a为array（）|| '',,,非空 返回`1`，失败返回`0`  
 `2017-9`.`3` 其中`.`是连接符  
 `$query_info = array('date'=>'$date','adid'=>'$adid');` 变量无需定义，这里的value强转为string了  
 `$test = array();$test['k1']='v1';` 关联数组 同上  
+
+**namespace解决的问题**
+```  
+冲突：用户编写的代码与php内部命名的冲突。
+可读性：为长标识符创建别名
+
+namespace Parse\Lib   //目录为Lib/class Date{}  
+include_once('ROOT_PATH',dirname(_DIR_));
+use Parse\Lib\Date;    //写全  
+
+```   
+
+```
+  public function abc () //默认是public,通过类的实例去访问，$a = new abc();$a -> test();
+  public static function abc()  //通过类直接访问 classa::test();  
+  
+  self::test() // 继承时，self指向它的类
+  static::test() //继承时，static动态指向定义它的类
+```   
 
 **一次操作，多次赋值**
 ```
