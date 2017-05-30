@@ -37,3 +37,21 @@
      root是 全局根目录  ！！！
      index是 默认入口文件 ！！！
  ```   
+ **docker中使用svn**  
+   
+ ```markdown    
+    yum install svn   在docker内部安装svn，其中关系，npm～node，yum～linux  
+    svn co path  其中要输入sina账号密码  
+    etc/nginx/conf.d/00-default   其中在etc/nginx/conf.d下建access_log文件  
+    启动nginx start  
+    启动php-fpm start
+    
+ 
+     vi /etc/nginx/nginx.conf  
+     最后一句：include ／etc／nginx／conf.d/*.conf 代表引入的实际生效的配置文件
+
+     vi /etc/nginx／conf.d/00-default.conf 
+     root是 全局根目录  ！！！
+     index是 默认入口文件 ！！！
+ ```
+ 
