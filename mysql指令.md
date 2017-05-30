@@ -53,6 +53,10 @@
    select a.ad_id,c.cust_id from cust_tmp c `left join` ad_tmp a `on` c.cust_id = a.ad_id; 起别名并联表查询  
    select cust_id `as` custd ,sum(ad_budget) from ad_tmp `group by` cust_id; 按同名查询  
    
+   select pv from report_feed where order_id  = 3541311 
+   and `UNIX_TIMESTAMP`(update_time)>1494158400
+   and UNIX_TIMESTAMP(update_time)< 1494158400
+   
    `insert into` tablename set date = '2017';初次插值  
    `update` tablename set date = '2018' where cust_id = 8;非初次插值  
    `truncate` table tablename;清空表格数据  
