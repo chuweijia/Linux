@@ -112,7 +112,22 @@ foreach ($keys as $key){
 ```  
 
 
+**时间戳 时间转换**  
 
+```  
+时间 --> 时间戳
+var strtime = ‘2017-05-12 18:55:49’
+var date = new Date(strtime);
+var time1 = date.getTime();精确到毫秒
+var time2 = date.valueOf();精确到毫秒
+var time3 = Date.parse(date);精确到秒
+
+时间戳 --> 时间
+var date = new Date(戳);
+Y = date.getFullYear()+'-' 
+M = date.getMonth+1<10?'0'+(date.getMonth()+1) : date.getMonth()+1)+'-';
+
+```   
 
 
 
