@@ -1,7 +1,6 @@
 # mysql指令  
   `mysqladmin -u root -p create chuDB`   `root`权限下，创建`数据库`  
-  `create databases chuDB`                创建`数据库`  
-   
+  `CREATE DATABASE chuDB`                创建`数据库`  大小写敏感  
   `show databases`     展示所有的数据库    
   `use chu`            使用指定的数据库    
   `show tables`        展示所有的数据表  
