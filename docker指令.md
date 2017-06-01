@@ -22,12 +22,13 @@
 
  **docker启nginx+php-fpm**  
    
- ```markdown  
+ ```markdown    
      /etc/init.d/nginx start || restart 
      /etc/php-fpm.conf start 
  ```   
  
-  **docker中nginx配置文件目录**  
+ 
+ **docker中nginx配置文件目录**  
    
  ```markdown  
      vi /etc/nginx/nginx.conf  
@@ -37,6 +38,7 @@
      root是 全局根目录  ！！！
      index是 默认入口文件 ！！！
  ```   
+ 
  **docker中使用svn**  
    
  ```markdown    
