@@ -68,9 +68,24 @@ use Parse\Lib\Date;    //写全
 $flag = mysql_connect();//成功，mysql连接标识；失败，false  
 mysql_select_db('dbname',$flag);  //$flag可选，返回值bool
 mysql_query("ser names utf8");//解决乱码  
-$result = mysql_query();//成功，资源标识符(describe,show,select)||true(其他类型)；失败，false  
+$result = mysql_query($query,$connect);//成功，资源标识符(describe,show,select)||true(其他类型)；失败，false  
 $row = mysql_fetch_assoc($result);// 返回，关联数组（从结果集中取出一行）|| false，无更多行   
 
+
+$queryRows = mysql_num_rows($result);//仅select
+$queryRows > 1 （多行结果，用mysql_fetch_array()）||  == 1 （一行结果，用mysql_fetch_assoc() ）|| == 0(空数据) 
+$result == false ($query语句||$connect连接 出错)
+
+
+if(is_bool($result)){
+//返回值为true||1，表示，$result是bool型
+}
+else{
+//返回值为true||1，表示，$result不是bool型
+}
+
+mysql_affected_rows($connect);//除了select
+mysqli_affected_rows($connect);//all（含select）
 ```
 
 `rm -rf 文件夹名`  强制删除非空文件夹，其中 -rf是做了递归处理  
