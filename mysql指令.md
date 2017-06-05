@@ -73,5 +73,24 @@
    
    
  
-   
+## mysql清理数据  
+  
+ 现象：mysqld 查看cpu占用率高，删除某个表总是失败  
+ 解决（无效）：netstat -anp |grep 3306|grep ESTABLISHED //断开所有网络连接  || 删除过大的表  
+ 解决：show processlist;  // 查看当前进程  
+      SELECT id FROM information_schema.processlist WHERE user='parse'; //parse为登陆的用户名  
+      SELECT concat('Kill ',id,';') FROM information_schema.processlist WHERE user='parse';//手动执行kill id即可删除  
+ 原因：sql语句过长，导致在mysql中无法执行也无法退出，僵死挂起，导致占用cpu过高  
+ 
+ 
+ 
+ `set global wait_timeout=120;` 数据库超时时间，若超时，给php返回false  
+ `ps -ef|grep php|grep auto| awk '{print $2}'|xargs kill -9`   
+ $2（表示第2列,即进程号PID）  
+ kill -9(强杀进程)  
+ xargs （使用上一个操作的结果作为下一个命令的参数使用）  
+ 
+ 
+ 
+ 
    
