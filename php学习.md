@@ -145,6 +145,53 @@ M = date.getMonth+1<10?'0'+(date.getMonth()+1) : date.getMonth()+1)+'-';
 ```   
 
 
+`curl_post($url,$request)`post方式 通过`$_POST`能获取到，$url是请求地址，$request是传入的参数   
+
+`http_build_query($params)`  生成 URL-encode 之后的请求字符串  ，$params可以是数组或包含属性的对象。  
+`curl_post_contents($url,$params)`  自己写的。。。
+`$_SERVER`  各种信息  
+
+`URI`    
+URI = Universal Resource Identifier   统一资源标识符 
+URL = Universal Resource Locator      统一资源定位符  
+URN = Uniform Resource Name           统一资源名称  
+ 
+关系：URL 和 URN 是 URI的子集  
+
+`substr("abcdef",1)`  返回值，被切割后的字符串。1是索引值为1，即b。从b开始，切到最后全部（默认第三个参数为全部，可自控）   
+`substr("abcdef",1)`  返回值，被切割后的字符串。1是索引值为1，即b。从b开始，切到最后全部（默认第三个参数为全部，可自控）   
+
+```  
+substr("abcdef",-1)  //f  
+substr("abcdef",-2)  //ef    
+substr("abcdef",-2,1)  //e  
+substr("abcdef",-0)  //adcdef同0  
+
+```   
+
+`time()` 返回当前unix时间戳  
+`error_reporting()` 设置应该报告何种 PHP 错误  
+`setlocale()` 设置地区信息  
+` $icon = "'fa fa-arrow-down icon-green'" ` 内部的字符串是值，外部的引号是作为字符串    
+php-->html 的过程中的空格，回车会被转义，需要注意！  
+
+`$_SERVER['PHP_SELF']` 当前执行脚本的文件名  
+`$_SERVER['REQUEST_URI']` URI用来指定要访问的页面  
+`parse_url($url)` 返回值是个关联数组，比如，['host'] = 'hostname';其中host是关键字。  
+`parse_url($url,PHP_URL_HOST)` PHP_URL_HOST是关键字，提取上面的关联数组   
+`trim($text)` 一般用于出去首尾空白字符  
+`strpos($request,',')` 返回值，‘,’ 所在的索引值（false，代表未查找到）。
+`explode(',',$a)`返回值，array[0]是','分割后面的，[1]是分割前面的。  
+`array_shift($arr)` 将数组第一项移出数组。返回值，被移后的新数组。  
+`class_exists($a)` 检查这个$a类名是否已经定义  
+`stripslashes` 反引用一个引用   
+`microtime()` 返回当前unix时间戳和微秒数  ，传入参数为true，将返回一个float数  
+`stripslashes` 反引用一个引用   
+
+
+
+
+
 
 
 
