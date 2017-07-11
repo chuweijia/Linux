@@ -186,8 +186,10 @@ php-->html 的过程中的空格，回车会被转义，需要注意！
 `array_shift($arr)` 将数组第一项移出数组。返回值，被移后的新数组。  
 `class_exists($a)` 检查这个$a类名是否已经定义  
 `stripslashes` 反引用一个引用   
-`microtime()` 返回当前unix时间戳和微秒数  ，传入参数为true，将返回一个float数  
-`stripslashes` 反引用一个引用   
+`microtime()` 返回当前unix时间戳和微秒数  ，传入参数为true，将返回一个float数    
+`HDFS`是Hadoop Distribute File System    hadoop分布式文件系统  
+
+
 
 
 
