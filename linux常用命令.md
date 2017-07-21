@@ -47,6 +47,9 @@
   `chgrp -R users 文件夹`             改变文件夹所属用户组  
   `chown [-R] 账号名称 文件或目录`      改变文件所属拥有者  
   
+  
+  `alias ll='ls-l'`     改ls命令为ll  
+  
   
   
    **本地启nginx+php-fpm**  
