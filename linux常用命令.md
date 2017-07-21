@@ -48,8 +48,9 @@
   `chown [-R] 账号名称 文件或目录`      改变文件所属拥有者  
   
   
-  `alias ll='ls-l'`     改ls命令为ll  
+  `alias ll='ls -l'`     改ls命令为ll  有个空格  
   
+  
   
   
    **本地启nginx+php-fpm**  
