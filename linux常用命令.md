@@ -102,8 +102,12 @@
   D     dele了，但未commit  
   svn up chu.php (更新指定文件，不会冲掉其他的！！！上线时候注意)  
   
- ```  
- `svn mkdir url/newdir -m "chu"`         新建svn文件夹  
+ ```    
+ 
+
+ `svn mkdir url/newdir -m "chu"`         新建svn文件夹    
+ 
+ 
  
    
    
