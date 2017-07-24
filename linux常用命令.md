@@ -95,7 +95,7 @@
   `svn cp old_url new_url -m "chu"`              这样写，即新建一个文件夹    
   svn 的几种状态   
   
-      ```  
+      
         M     svn待commit  ，change了但未commit  
         ！    rm -rf 文件夹    ，是已删除的（或者重命名后即废弃的文件）  
         ？    no add  （未add 可能是重命名过了）  
@@ -103,7 +103,7 @@
         D     dele了，但未commit  
         svn up chu.php (更新指定文件，不会冲掉其他的！！！上线时候注意)  
 
-     ```      
+           
 
  `svn mkdir url/newdir -m "chu"`         新建svn文件夹    
  
