@@ -20,6 +20,11 @@
   
 ## docker创建容器  
 
+ **docker 本地**
+
+/Users/chuweijia/Workspace/etc/nginx/conf.d/  这里面是nginx的配置文件地址  
+/Users/chuweijia/Workspace/etc/nginx／nginx.conf 这里可以启动nginx   
+
  **docker启nginx+php-fpm**  
    
  ```markdown    
