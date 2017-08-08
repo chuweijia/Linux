@@ -23,7 +23,10 @@
  **docker 本地**
 
 /Users/chuweijia/Workspace/etc/nginx/conf.d/  这里面是nginx的配置文件地址  
-/Users/chuweijia/Workspace/etc/nginx／nginx.conf 这里可以启动nginx   
+/Users/chuweijia/Workspace/etc/nginx／nginx.conf 这里可以启动nginx    
+
+
+nginx -c /Users/chuweijia/Workspace/etc/nginx/nginx.conf -s stop||start
 
  **docker启nginx+php-fpm**  
    
