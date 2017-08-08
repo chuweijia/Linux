@@ -26,7 +26,8 @@
 /Users/chuweijia/Workspace/etc/nginx／nginx.conf 这里可以启动nginx    
 
 
-nginx -c /Users/chuweijia/Workspace/etc/nginx/nginx.conf -s stop||start
+nginx -c/Users/chuweijia/Workspace/etc/nginx/nginx.conf (-s stop || -s reload)  
+php-fpm -p /var -y/etc/php-fpm.conf   (-s stop || -s reload)
 
  **docker启nginx+php-fpm**  
    
