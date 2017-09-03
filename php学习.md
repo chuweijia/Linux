@@ -9,7 +9,10 @@
 `strlen($str)` 返回值某个字串长度  
 `const a`   常量的值不能变    
 `PIRECTORY_SEPARATOR` 生成系统反斜杠  
-`$_SERVER['HTTP_HOST']` 当前请求头中host项的内容  
+`$_SERVER['HTTP_HOST']` 当前请求头中host项的内容    
+
+`implode(",",$tmp)`  tmp是个一维数组，返回值是个字符串  
+
 ```
 static $arr = array(); 
 if(is_null($arr[$cust_id])){
@@ -191,8 +194,7 @@ URN = Uniform Resource Name           统一资源名称
  
 关系：URL 和 URN 是 URI的子集  
 
-`substr("abcdef",1)`  返回值，被切割后的字符串。1是索引值为1，即b。从b开始，切到最后全部（默认第三个参数为全部，可自控）      
-`substr("abcdef",1)`  返回值，被切割后的字符串。1是索引值为1，即b。从b开始，切到最后全部（默认第三个参数为全部，可自控）        
+`substr("abcdef",1)`  返回值，被切割后的字符串。1是索引值为1，即b。从b开始，切到最后全部（默认第三个参数为全部，可自控）              
 
 
 ```  
@@ -243,14 +245,33 @@ php-->html 的过程中的空格，回车会被转义，需要注意！
  类本身
  **$this**
  对象本身  
- 若本身无期望
+ 若本身无期望函数，会找到父级  
+ 
+ 
  
  **parent**
- 父类本身
+ 父类本身   
+ 只能访问static的  
  
  
  
-## 与ajax交互  
+ 
+ **static**
+ 可以用类名直接访问   
+ 静态方法，可以用对象访问  
+ 静态属性，不可以用对象访问  
+ 
+ 
+ **protected**
+其子类可以访问，外部类不能访问  
+
+ 
+## 与ajax交互    
+问题描述： 
+PHP接收到的参数类型非预期  
+
+解决方案1:  
+`excodeURIComponent(JSON.)`
 
 
 
