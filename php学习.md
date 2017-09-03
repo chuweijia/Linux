@@ -271,7 +271,14 @@ php-->html 的过程中的空格，回车会被转义，需要注意！
 PHP接收到的参数类型非预期  
 
 解决方案1:  
-`excodeURIComponent(JSON.)`
+`excodeURIComponent(JSON.stringify(~~))`  // 前端，手动编码  
+
+`$parse = urldecode($parse)`  //后端，手动解码，解URL  
+`json_decode($parse)`  //string --> obj  
+`$obj -> adid_text`   //Array:arr[$key]   Obj:obj->key  
+
+解决方案2:
+前端修改ajax的contentType的值  我觉得并不能成功。  
 
 
 
