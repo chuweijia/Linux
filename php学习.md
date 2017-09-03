@@ -9,7 +9,19 @@
 `strlen($str)` 返回值某个字串长度  
 `const a`   常量的值不能变    
 `PIRECTORY_SEPARATOR` 生成系统反斜杠  
-`$_SERVER['HTTP_HOST']` 当前请求头中host项的内容    
+`$_SERVER['HTTP_HOST']` 当前请求头中host项的内容       
+
+```
+ intval('222')   --> int(222)
+ intval('aaa')   --> int(0)
+ 
+ 
+ is_numeric('22')  --> true 
+ is_integer('22')  --> false      
+
+```  
+`array_keys($arr)`  返回，$arr数组的所有key，所以可以用个数组单独存起来  
+
 
 `implode(",",$tmp)`  tmp是个一维数组，返回值是个字符串  
 
