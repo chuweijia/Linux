@@ -5,7 +5,28 @@
 `intval（$a）` $a为array（）|| '',,,非空 返回`1`，失败返回`0`  
 `2017-9`.`3` 其中`.`是连接符  
 `$query_info = array('date'=>'$date','adid'=>'$adid');` 变量无需定义，这里的value强转为string了  
-`$test = array();$test['k1']='v1';` 关联数组 同上  
+`$test = array();$test['k1']='v1';` 关联数组 同上    
+`strlen($str)` 返回值某个字串长度  
+`const a`   常量的值不能变    
+`PIRECTORY_SEPARATOR` 生成系统反斜杠  
+`$_SERVER['HTTP_HOST']` 当前请求头中host项的内容  
+```
+static $arr = array(); 
+if(is_null($arr[$cust_id])){
+coding...
+}
+静态数组，对单次查询有效，知识
+当重复的访问同一个cust_id时候，为了更快速，可以这样。第二次开始就读静态数组了。
+```   
+
+`isset`  检查一个变量是否被设置了且不为null   
+`is_null` 检查一个变量是否为null  
+`empty` 检查当变量为"" "0" 0 0.00 null false array() $var;(即被定义但并未赋值)      
+
+`array_push($arr,$item)` 返回值为个数  
+`str_replace("e","s","hello")`  将hello中的e替换为s   
+
+ 
 
 **namespace解决的问题**
 ```  
@@ -126,6 +147,16 @@ foreach ($keys as $key){
 }  
 ```  
 
+``` markdown  
+$arr = array(
+'k1' => 'v1',
+'k1' => 'v2',
+); 
+
+当同key，后者会覆盖前者。解决方案，放到非关联数组中保存。
+``` 
+
+
 
 **时间戳 时间转换**  
 
@@ -189,6 +220,35 @@ php-->html 的过程中的空格，回车会被转义，需要注意！
 `microtime()` 返回当前unix时间戳和微秒数  ，传入参数为true，将返回一个float数    
 `HDFS`是Hadoop Distribute File System    hadoop分布式文件系统  
 
+
+
+
+## 日志等级  
+`LOG_ERR`  可进行修复工作，以后也会出现  
+`LOG_INFO` 有用的信息，给用户看明白，不可随便对待  
+`LOG_DEBUG` 级别最低，可随意使用，为了了解系统的运行状态  
+
+
+
+
+## 类与对象  
+`astract` 抽象类  
+`$a instanceof MyClass` 检查是否是某一类的实例  返回值是bool  
+`Exception` 异常类 php内置的类，getCode() 获取异常代码。getMessage() 获取异常信息 。__toString()将异常对象转成字串。  
+ 
+ 
+ **self** 
+ 类本身
+ **$this**
+ 对象本身  
+ 若本身无期望
+ 
+ **parent**
+ 父类本身
+ 
+ 
+ 
+## 与ajax交互  
 
 
 
