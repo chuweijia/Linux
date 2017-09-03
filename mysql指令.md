@@ -14,7 +14,9 @@
   `insert into 表名B set k1=v1,k2=v2;`                     数据表中插值  `单条`    
   `delete from 表名;`                                      删除表内的数据  
   `drop 表名;`                                             删除表  
-  `/.env;`                                                项目下的数据库配置路径  
+  `/.env;`                                                项目下的数据库配置路径    
+  
+  
 ## mysql本地环境搭建  
  
   下载`mysql-server`，一种mysql的驱动服务  
@@ -64,13 +66,24 @@
    alter table camp_tmp `change` `camp_budget camp_budget` decimal(5,6),not null,default '0',comment '注释';改变某列值 全写上    
    
    if(exp1,exp2,exp3); exp是`表达式`，当exp1为true时，执行exp2否则3  
+   ```  
+      create use `faraday` @ '%' IDENTIFIED BY '123456'  
+      这里的 % 是通配符，使用户可以在任何远程主机上访问（数据库用户建立成功的前提下）。
+      扩展知识：10.39.% 表示可以在任意前缀为10.39的机器上访问
+   ```    
+   
+   
+   
+ 
    
 ## mysql_query
 
    mysql_query(query,connection);其中前者（sql查询）必选，后者（规定sql连接标识符）可选（若无则使用上一个打开的连接）  
    $result = mysql_query($query,$connect);
-   while($row = mysql_fetch_array($result,MYSQL_ASSOC));以关联数组输出 ，应用于输出多行结果  
+   while($row = mysql_fetch_array($result,MYSQL_ASSOC));以关联数组输出 ，应用于输出多行结果    
    
+   mysql 查询的语句，尽量不用联表方式查询，改为用php逻辑处理。
+   
    
  
 ## mysql清理数据  
@@ -88,7 +101,32 @@
  `ps -ef|grep php|grep auto| awk '{print $2}'|xargs kill -9`   
  $2（表示第2列,即进程号PID）  
  kill -9(强杀进程)  
- xargs （使用上一个操作的结果作为下一个命令的参数使用）  
+ xargs （使用上一个操作的结果作为下一个命令的参数使用）    
+ 
+ 
+ ## mysql 导出数据  
+ 1. 本地启mysql，导出数据到本地  
+ `mysql -hxx -uxx -pxx -e "select * from xx;" > /User/xx/log.txt`  确认本地能访问这个mysql  
+ 
+ 2. docker上启mysql，导出数据到本地    
+ `mysql -hxx -uxx -pxx -e "select * from xx;" > /xx/log.txt`       在服务器上把结果导出到docker某处   
+ `nc 10.236.30.24 1234 < sql.txt`   此步骤在docker上操作，目的是与本地建立连接。（ `/sbin/ifconfig`可以查看ip和端口号（我记得是本地的））  
+ 
+ 
+ `nc -l 1234 > sql.txt`   此步骤在本地执行，目的是呼应上一步，最终sql.txt就在本地被导出了，也可以用rsync实现。（1234就是本地默认的端口号） 
+ 
+ 
+ ## mysql常见报错  
+ `mysql server has gone away` 连接超时，mysql服务挂了。解决方案，手动重连n次，for循环。  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
  
  
  
