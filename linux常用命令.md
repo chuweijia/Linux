@@ -143,5 +143,12 @@
   `dw`                 删除当前光标的 右边的字母  
   `:set nu`            查看行标  
   
+  
+  
+# vue  
+
+`npm run dev`          本地调试  
+`npm run build`        打包，会生成index.html  和一堆js文件，把这些推到服务器上  
+
   
   
