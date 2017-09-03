@@ -48,8 +48,17 @@
   `chown [-R] 账号名称 文件或目录`      改变文件所属拥有者  
   
   
-  `alias ll='ls -l'`     改ls命令为ll  有个空格  
+  `alias ll='ls -l'`     改ls命令为ll  有个空格    
+  `ipconfig`  10.xxx开头的，是本机host，且浏览器输入curl访问的是本机的host！！你在服务器上curl就是服务器的host！  
+  `vi /etc/hosts ` 配置host文件（本机、远程服务器），原来配置的147，会覆盖掉我线上的环境，记住！  
+  `vi /etc/sudoers   加一行，wq!  保存退出 `   45上开sudo权限，让有权限的人以此方法登录并操作。     
+  `head -n 10 mysql_read_debug.log`  只打印出10条  
+  `du -sh * `  按文件大小查看文件（所有）  
   
+   
+  
+  
+  
   
   
   
@@ -92,8 +101,11 @@
   `svn info`           查看文件详细信息  
   `svn update`         更新 无后缀则更新全部  
   `svn delete`         删除    
-  `svn cp old_url new_url -m "chu"`              这样写，即新建一个文件夹    
-  svn 的几种状态   
+  `svn cp old_url new_url -m "chu"`              这样写，即新建一个文件夹      
+  `svn log -l 10`      查看svn的版本号，并且limit 10行  
+  `svn merge -r 当前版本号:目标版本号 query.php`  回滚指定文件（就是query.php这项必须写！！，然后再svn ci -m ""）   
+  
+  svn 的几种状态   
   
       
         M     svn待commit  ，change了但未commit  
@@ -105,7 +117,12 @@
 
            
 
- `svn mkdir url/newdir -m "chu"`         新建svn文件夹    
+ `svn mkdir url/newdir -m "chu"`         新建svn文件夹      
+ `svn mv url1 url2`移动文件夹，必须得是svn mv，，你自己在本地mv没用（且还会报错）   
+ `ls -al`  在文件夹下会有一个隐藏文件.svn 当出问题的时候可以del it  
+ 
+ 
+ 
  
  
  
@@ -120,6 +137,11 @@
   `ctrl+f/b`           整页移动  
   `u`                  反悔   
   `／+G`               从头预览  
-  `ctrl+d/n`           半页移动
+  `ctrl+d/n`           半页移动  
+  `$`                  跳到行尾
+  `(`  `)`             跳到行首、尾
+  `dw`                 删除当前光标的 右边的字母  
+  `:set nu`            查看行标  
   
+  
   
