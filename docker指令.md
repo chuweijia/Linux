@@ -68,7 +68,7 @@ php-fpm -p /var -y/etc/php-fpm.conf   (-s stop || -s reload)
  
  
  
- ##本机docker的情况说明  
+ ## 本机docker的情况说明  
  docker server启动着（就是那个小鲸鱼），但电脑关闭了，docker镜像也会挂掉（即使deamon在 也会挂掉）  
  `docker ps -a`   如果显示exited，代表docker退出了  
  `docker start chu_docker`手动重启docker    
