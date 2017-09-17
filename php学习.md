@@ -297,6 +297,41 @@ PHP接收到的参数类型非预期
 ## 关于继承
 
 
+```  
+
+除非子类覆盖了父类的方法，被继承的方法都会保留其原有功能
+protected 其子类可以访问，外部类不能访问
+PHP只支持单继承，不允许多重继承。一个子类只能有一个父类，不允许一个类直接继承多个类，但一个类可以被多个类继承。
+可以有多层继承，即一个类可以继承某一个类的子类，如类B 继承了类A，类C又继承了类B，那么类C也间接继承了类A
+在子类里面允许重写（覆盖）父类的方法
+
+```  
+父类如何继承子类？  
+```  
+后期静态绑定，表示运行时最初调用的类来绕过限制
+<?php
+class A {
+    public static function who() {
+        echo __CLASS__;
+    }
+    public static function test() {
+        static::who(); // 后期静态绑定从这里开始
+    }
+}
+
+class B extends A {
+    public static function who() {
+        echo __CLASS__;
+    }
+}
+
+B::test();  //  B  
+?>
+
+
+```
+
+
 
 
 
