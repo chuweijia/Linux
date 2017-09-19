@@ -341,11 +341,7 @@ class B extends A {
 B::test();  //  B  
 ?>
 
-
-```  
-或者使用多态性，抽象类  
-
-```
+//或者使用多态性，抽象类 
 abstract class whale
 {
 
@@ -382,9 +378,16 @@ $fish = new fish();
 $fish->test();
 $fish->myfunc();
 
-```  
 
-## 关于异常错误   
+
+```  
+ 
+  
+
+
+
+## 关于异常错误     
+
 `502` 重启下php-fpm  
 
 
