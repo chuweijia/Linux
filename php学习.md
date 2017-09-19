@@ -9,7 +9,9 @@
 `strlen($str)` 返回值某个字串长度  
 `const a`   常量的值不能变    
 `PIRECTORY_SEPARATOR` 生成系统反斜杠  
-`$_SERVER['HTTP_HOST']` 当前请求头中host项的内容       
+`$_SERVER['HTTP_HOST']` 当前请求头中host项的内容      
+`$dist_type_interest['interest'] = $dist_type_interest['interest'] + $dist_type_app_interest['interest'];`
+当数组中的key相同，array_merge会后者覆盖前者，为了不覆盖 可以直接用 + 号连接  
 
 ```
  intval('222')   --> int(222)
@@ -340,7 +342,51 @@ B::test();  //  B
 ?>
 
 
+```  
+或者使用多态性，抽象类  
+
 ```
+abstract class whale
+{
+
+  function __construct()
+  {
+    // some code here
+  }
+
+  function myfunc()
+  {
+    $this->test();
+  }
+
+  abstract function test();
+}
+
+
+class fish extends whale
+{
+  function __construct()
+  {
+    parent::__construct();
+  }
+
+  function test()
+  {
+    echo "So you managed to call me !!";
+  }
+
+}
+
+
+$fish = new fish();
+$fish->test();
+$fish->myfunc();
+
+```  
+
+## 关于异常错误   
+`502` 重启下php-fpm  
+
 
 
 
