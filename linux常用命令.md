@@ -121,7 +121,8 @@
  `svn mv url1 url2`移动文件夹，必须得是svn mv，，你自己在本地mv没用（且还会报错）   
  `ls -al`  在文件夹下会有一个隐藏文件.svn 当出问题的时候可以del it  
  
- 
+ `rsync wangran.log 10.13.41.45::tmp`    将153机器的内容推送到45
+ `cat info.log |grep '"rtcode":200'  |grep -v 5013508871   > wangran.log` 过滤指定信息并输出到当前目录下保存起来
  
  
  
