@@ -105,6 +105,8 @@
   `svn log -l 10`      查看svn的版本号，并且limit 10行  
   `svn merge -r 当前版本号:目标版本号 query.php`  回滚指定文件（就是query.php这项必须写！！，然后再svn ci -m ""）   
   
+   `svn merge -r 50336:49924 /www/docker_remote/ad_parse_Frame_v1`  回滚
+  
   svn 的几种状态   
   
       
