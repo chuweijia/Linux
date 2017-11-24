@@ -33,7 +33,7 @@ php-fpm -p /var -y/etc/php-fpm.conf   (-s stop || -s reload)
    
  ```markdown    
      /etc/init.d/nginx start || restart 
-     /etc/php-fpm.conf start 
+     /etc/init.d/php-fpm.conf start 
  ```    
  
   **docker中nginx配置文件目录**  
