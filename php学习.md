@@ -393,7 +393,8 @@ $fish->myfunc();
 
 ## 关于php安装环境  
 
-```  
+
+
 关于安装yaf  
 
 0. 确定自己的php56运行在哪    
@@ -453,25 +454,3 @@ kill -INT `cat /usr/local/php/var/run/php-fpm.pid`
  
 重启php-fpm
 kill -USR2 cat /usr/local/php/var/run/php-fpm.pid   
-
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
