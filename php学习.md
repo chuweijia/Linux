@@ -391,6 +391,76 @@ $fish->myfunc();
 `502` 重启下php-fpm  
 
 
+## 关于php安装环境
+关于安装yaf  
+
+0. 确定自己的php56运行在哪    
+
+```
+php test.php  (其中写 phpinfo() 可以打印当前机器上的php运行的信息)
+
+比如 /opt/remi/php56/root/usr/bin  是95机器上的环境  
+
+以下所有的执行命令 都是基于这个根路径执行的
+```
+
+
+ 1.安装yaf源 (php56 最好安装yaf235 的,,坑)  
+ ```
+
+wget http://pecl.php.net/get/yaf-2.3.3.tgz   我下载的2.3.5不好用,phpize执行有问题
+
+tar -zxvf yaf-2.3.3* && cd yaf-2.3.3  
+
+phpize (phpize根路径自己找)
+
+./configure --with-php-config=/usr/bin/php-config && make && make test (php-config根路径自己找)
+
+sudo make
+
+sudo make install
+```  
+
+
+
+2.在php.ini中中添加extension=yaf.so  
+
+```
+/opt/remi/php56/root/usr/lib64/php/modules  是modules 模块
+
+sudo chmod 744  /etc/php.ini  
+
+sudo vim /etc/php.ini     添加扩展在extension注释下面添加一句 extension=yaf.so  
+```
+
+
+3.重启php-fpm  
+`/usr/bin/php-fpm -c /opt/remi/php56/root/etc/php.ini  -y /opt/remi/php56/root/etc/php-fpm.conf   (kill 并 重启php-fpm)`  
+
+
+4.查看模块是否被安装上  
+`php -m |grep yaf`
+
+5.其他    
+
+```
+测试php-fpm配置
+/usr/local/php/sbin/php-fpm -t
+/usr/local/php/sbin/php-fpm -c /usr/local/php/etc/php.ini -y /usr/local/php/etc/php-fpm.conf -t
+ 
+启动php-fpm
+/usr/local/php/sbin/php-fpm
+/usr/local/php/sbin/php-fpm -c /usr/local/php/etc/php.ini -y /usr/local/php/etc/php-fpm.conf
+ 
+关闭php-fpm
+kill -INT `cat /usr/local/php/var/run/php-fpm.pid`
+ 
+重启php-fpm
+kill -USR2 `cat /usr/local/php/var/run/php-fpm.pid`  
+
+```
+
+
 
 
 
