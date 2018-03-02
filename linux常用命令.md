@@ -154,5 +154,22 @@
 `npm run dev`          本地调试  
 `npm run build`        打包，会生成index.html  和一堆js文件，把这些推到服务器上  
 
+
+1.关于文件压缩,解压缩
+
+tar -zcvf /data0/weibo_ads/weijia12/sfst.tar.gz sfst/
+tar -zxvf /bbs.tar.zip -C /zzz/bbs    
+//把根目录下的bbs.tar.zip解压到/zzz/bbs下，前提要保证存在/zzz/bbs这个目录 
+
+
+2.关于文件传输
+
+rsync sfst.tar.gz 10.13.41.45::tmp  (然后去10.13.41.45:7803接口去看)
+wget http://10.13.41.45:7803/sfst.tar.gz     (在166机器上拉取到45这个路径的文件)
+
+
+`nc 10.236.30.24 1234 < sql.txt`   此步骤在docker上操作，目的是与本地建立连接。（ `/sbin/ifconfig`可以查看ip和端口号（我记得是本地的））  
+`nc -l 1234 > sql.txt`   此步骤在本地执行，目的是呼应上一步，最终sql.txt就在本地被导出了，也可以用rsync实现。（1234就是本地默认的端口号） 
+
   
   
